@@ -1,0 +1,16 @@
+{
+  "name": "polling-front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.3",
+    "parsleyjs": "^2.9.2"
+  }
+}
