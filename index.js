@@ -1,26 +1,31 @@
+//main parsley validate function from the Demo
 $(function () {
 	$('#polling-form')
 		.parsley()
 		.on('field:validated', function () {
 			var ok = $('.parsley-error').length === 0;
 			$('.bs-callout-info').toggleClass('hidden', !ok);
-			alert('field:validated running');
+			alert('debugging: field:validated running');
 			$('.bs-callout-warning').toggleClass('hidden', ok);
 		})
 		.on('form:submit', function (e) {
 			alert('form:submit');
 			e.preventDefault();
-			var $input = $('<input type="button" value="new button" />');
+			var $input = $(
+				'<input type="button" value="debugging: Submit clicked" />'
+			);
 			$input.appendTo($('body'));
 			var form = $(this);
 			form.parsley().validate();
 			if (form.parsley().isValid()) {
-				alert('valid');
+				alert('debugging: form valid');
 			}
 			return false; // Don't submit form for this demo
 		});
 });
 
+// me adding a UK phone number regex - the regex itself is testing well on regexr
+// this whole function doesn't seem to be working
 window.Parsley.addValidator('phone', {
 	validateString: function (inputNumber) {
 		alert('inside phone regexr');
@@ -38,6 +43,4 @@ window.Parsley.addValidator('phone', {
 	},
 });
 
-$(function () {
-	document.getElementById('polling-form').append('hello');
-});
+alert('js file running');

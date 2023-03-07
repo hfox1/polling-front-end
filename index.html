@@ -21,6 +21,7 @@
 		<script src="index.js"></script>
 	</head>
 	<body>
+		<!-- these should be toggling but they're not, possibly because submit is not working properly -->
 		<div class="bs-callout bs-callout-warning hidden">
 			<h4>Oh snap!</h4>
 			<p>This form seems to be invalid</p>
@@ -37,12 +38,15 @@
 			<br />
 			<br />
 
+			<!-- the options in here are behaving weirdly - sometimes it's validating on each keypress
+      many times it's not validating at all 
+      the 11 keystroke threshold for validation isn't being respected -->
 			<label for="phone">Phone Number * :</label>
 			<input
 				type="text"
 				class="form-control"
 				data-parsley-validate=""
-				data-parsley-validation-threshold="11"
+				data-parsley-validation-threshold="9"
 				name="phone"
 				required=""
 				data-parsley-phone=""
